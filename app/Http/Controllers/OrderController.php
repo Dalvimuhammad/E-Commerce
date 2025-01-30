@@ -74,6 +74,11 @@ class OrderController extends Controller
         return Redirect::back();
     }
 
+    public function delete_order (Order $order, Request $request){
+        $order->delete();
+        return Redirect::route('index_order');
+    }
+
 
 
 }

@@ -47,10 +47,20 @@
                             @endforeach
                         </div>
                         <p class="ms-4">Total Price: Rp.{{$total_price}}</p>
-                            <form action="{{route('checkout')}}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-primary ms-4">Checkout</button>
-                            </form>
+                        <div class="d-flex gap-2">
+                            <div>
+                                <form action="{{route('checkout')}}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary ms-4">Checkout</button>
+                                </form>
+                            </div>
+                            <div>
+                                <form action="{{route('index_product')}}" method="get">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-secondary">Back to Product</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

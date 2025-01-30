@@ -45,6 +45,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
     Route::get('/order', [OrderController::class, 'index_order'])->name('index_order');
     Route::get('/order/{order}', [Ordercontroller::class, 'show_order'])->name('show_order');
+    Route::delete('/order/{order}', [OrderController::class, 'delete_order'])->name('delete_order');
     Route::post('/order/{order}/pay', [OrderController::class, 'submit_payment_receipt'])->name('submit_payment_receipt');
 
     Route::get('/profile', [ProfileController::class, 'show_profile'])->name('show_profile');
